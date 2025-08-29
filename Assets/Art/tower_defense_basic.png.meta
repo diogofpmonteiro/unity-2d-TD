@@ -112,7 +112,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -150,7 +150,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -178,10 +178,10 @@ TextureImporter:
       name: tower_defense_basic_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 5
-        width: 74
-        height: 92
+        x: 0
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +200,10 @@ TextureImporter:
       name: tower_defense_basic_1
       rect:
         serializedVersion: 2
-        x: 116
-        y: 21
-        width: 68
-        height: 69
+        x: 100
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,9 +223,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
-        y: 2
+        y: 0
         width: 100
-        height: 95
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +244,10 @@ TextureImporter:
       name: tower_defense_basic_3
       rect:
         serializedVersion: 2
-        x: 434
-        y: 22
-        width: 32
-        height: 55
+        x: 300
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,7 +266,7 @@ TextureImporter:
       name: tower_defense_basic_4
       rect:
         serializedVersion: 2
-        x: 500
+        x: 400
         y: 0
         width: 100
         height: 100
@@ -288,10 +288,10 @@ TextureImporter:
       name: tower_defense_basic_5
       rect:
         serializedVersion: 2
-        x: 628
-        y: 28
-        width: 44
-        height: 44
+        x: 500
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +310,10 @@ TextureImporter:
       name: tower_defense_basic_6
       rect:
         serializedVersion: 2
-        x: 740
-        y: 72
-        width: 20
-        height: 25
+        x: 600
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,10 +332,10 @@ TextureImporter:
       name: tower_defense_basic_7
       rect:
         serializedVersion: 2
-        x: 805
-        y: 8
-        width: 90
-        height: 85
+        x: 700
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,10 +354,10 @@ TextureImporter:
       name: tower_defense_basic_8
       rect:
         serializedVersion: 2
-        x: 938
-        y: 72
-        width: 25
-        height: 26
+        x: 800
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,10 +376,10 @@ TextureImporter:
       name: tower_defense_basic_9
       rect:
         serializedVersion: 2
-        x: 1012
-        y: 28
-        width: 26
-        height: 44
+        x: 900
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,10 +398,10 @@ TextureImporter:
       name: tower_defense_basic_10
       rect:
         serializedVersion: 2
-        x: 1028
-        y: 62
-        width: 44
-        height: 26
+        x: 1000
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,10 +420,10 @@ TextureImporter:
       name: tower_defense_basic_11
       rect:
         serializedVersion: 2
-        x: 1062
-        y: 28
-        width: 26
-        height: 44
+        x: 1100
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,10 +442,10 @@ TextureImporter:
       name: tower_defense_basic_12
       rect:
         serializedVersion: 2
-        x: 1102
-        y: 28
-        width: 26
-        height: 44
+        x: 1200
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,297 +460,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_13
-      rect:
-        serializedVersion: 2
-        x: 1128
-        y: 72
-        width: 44
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6b33ea5e89723e2d0800000000000000
-      internalID: -3250710968389454922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_14
-      rect:
-        serializedVersion: 2
-        x: 1172
-        y: 28
-        width: 26
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: beeadb20ad9dbfba0800000000000000
-      internalID: -6054005743697416469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_15
-      rect:
-        serializedVersion: 2
-        x: 1204
-        y: 28
-        width: 26
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1acc5410914b27ff0800000000000000
-      internalID: -39771427204379487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_16
-      rect:
-        serializedVersion: 2
-        x: 1228
-        y: 61
-        width: 44
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c67c348641cf5bb30800000000000000
-      internalID: 4302622183601194860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_17
-      rect:
-        serializedVersion: 2
-        x: 1270
-        y: 28
-        width: 26
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b23603a16ab130be0800000000000000
-      internalID: -1512334649648454869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_18
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 39
-        width: 22
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f3ce28064ef655ac0800000000000000
-      internalID: -3867061678365283265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_19
-      rect:
-        serializedVersion: 2
-        x: 702
-        y: 41
-        width: 26
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4caa489777068e8a0800000000000000
-      internalID: -6275660014484673852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_20
-      rect:
-        serializedVersion: 2
-        x: 772
-        y: 41
-        width: 27
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 659504bae89a767a0800000000000000
-      internalID: -6383947516550817450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_21
-      rect:
-        serializedVersion: 2
-        x: 909
-        y: 8
-        width: 83
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e98d19db220765660800000000000000
-      internalID: 7374204734377416862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_22
-      rect:
-        serializedVersion: 2
-        x: 740
-        y: 3
-        width: 20
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e55767fabea12ca60800000000000000
-      internalID: 7692740713065641310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_23
-      rect:
-        serializedVersion: 2
-        x: 1028
-        y: 14
-        width: 44
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aed6b4b8120782670800000000000000
-      internalID: 8514178384917130730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_24
-      rect:
-        serializedVersion: 2
-        x: 1128
-        y: 2
-        width: 44
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a2dd0dd35919c480800000000000000
-      internalID: -8878537342402571611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tower_defense_basic_25
-      rect:
-        serializedVersion: 2
-        x: 1228
-        y: 13
-        width: 44
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd4874f0b7209cea0800000000000000
-      internalID: -5852143513230670625
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 13ba2f4149e0545a3aa313f07ac22261
     internalID: 0
     vertices: []
     indices: 
@@ -765,20 +479,7 @@ TextureImporter:
       tower_defense_basic_10: 4131887431961472327
       tower_defense_basic_11: 7586205836040711132
       tower_defense_basic_12: -2883214199594693391
-      tower_defense_basic_13: -3250710968389454922
-      tower_defense_basic_14: -6054005743697416469
-      tower_defense_basic_15: -39771427204379487
-      tower_defense_basic_16: 4302622183601194860
-      tower_defense_basic_17: -1512334649648454869
-      tower_defense_basic_18: -3867061678365283265
-      tower_defense_basic_19: -6275660014484673852
       tower_defense_basic_2: 8816747139719857424
-      tower_defense_basic_20: -6383947516550817450
-      tower_defense_basic_21: 7374204734377416862
-      tower_defense_basic_22: 7692740713065641310
-      tower_defense_basic_23: 8514178384917130730
-      tower_defense_basic_24: -8878537342402571611
-      tower_defense_basic_25: -5852143513230670625
       tower_defense_basic_3: 2196608551099265960
       tower_defense_basic_4: -8982367984945633798
       tower_defense_basic_5: -1612818156496286015
