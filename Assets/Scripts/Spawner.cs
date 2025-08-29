@@ -1,26 +1,56 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private float _spawnTimer; 
-    private float _spawnInterval = 1f;
+    [SerializeField] private WaveData[] waves;
+    [SerializeField] private ObjectPooler orcPool; 
+    [SerializeField] private ObjectPooler dragonPool; 
+    [SerializeField] private ObjectPooler kaijuPool;
 
-    [SerializeField] private ObjectPooler pool; 
+
+    private Dictionary<EnemyType, ObjectPooler> _poolDictionary; 
+    private int _currentWaveIndex = 0;
+    private float _spawnTimer;
+    private float _spawnCounter;
+    private int _enemiesRemoved; 
+    private WaveData CurrentWave => waves[_currentWaveIndex];
+
+
+    private void Awake()
+    {
+        _poolDictionary = new Dictionary<EnemyType, ObjectPooler>()
+        {
+            { EnemyType.Orc, orcPool },
+            { EnemyType.Dragon, dragonPool },
+            { EnemyType.Kaiju, kaijuPool },
+        };
+    }
+
 
     void Update()
     {
         _spawnTimer -= Time.deltaTime;
-        if (_spawnTimer <= 0)
+        if (_spawnTimer <= 0 && _spawnCounter < CurrentWave.enemiesPerWave)
         {
-            _spawnTimer = _spawnInterval;
-            SpawnEnemy(); 
+            _spawnTimer = CurrentWave.spawnInterval;
+            SpawnEnemy();
+            _spawnCounter++;
+        }
+        else if (_spawnCounter >= CurrentWave.enemiesPerWave && _enemiesRemoved >= CurrentWave.enemiesPerWave)
+        {
+            _currentWaveIndex = (_currentWaveIndex + 1) % waves.Length;
+            _spawnCounter = 0; 
         }
     }
 
     private void SpawnEnemy()
     {
-        GameObject spawnedObject = pool.GetPooledObject();
-        spawnedObject.transform.position = transform.position; // where game objects will be spawned
-        spawnedObject.SetActive(true); 
+        if (_poolDictionary.TryGetValue(CurrentWave.enemyType, out var pool))
+        {   
+            GameObject spawnedObject = pool.GetPooledObject();
+            spawnedObject.transform.position = transform.position; // where game objects will be spawned
+            spawnedObject.SetActive(true); 
+        }
     }
 }
