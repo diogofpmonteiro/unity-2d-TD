@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TowerData[] towers;
     private List<GameObject> activeCards = new List<GameObject>();
 
+    private Platform _currentPlatform;
 
     private void OnEnable()
     {
@@ -20,6 +21,7 @@ public class UIController : MonoBehaviour
         GameManager.OnLivesChanged += UpdateLivesText;
         GameManager.OnResourcesChanged += UpdateResourcesText;
         Platform.OnPlatformClicked += HandlePlatformClicked;
+        TowerCard.onTowerSelected += HandleTowerSelected;
     }
 
     private void OnDisable()
@@ -28,6 +30,7 @@ public class UIController : MonoBehaviour
         GameManager.OnLivesChanged -= UpdateLivesText;
         GameManager.OnResourcesChanged -= UpdateResourcesText;
         Platform.OnPlatformClicked -= HandlePlatformClicked;
+        TowerCard.onTowerSelected -= HandleTowerSelected;
     }
 
     private void UpdateWaveText(int currentWave)
@@ -46,6 +49,7 @@ public class UIController : MonoBehaviour
 
     private void HandlePlatformClicked(Platform platform)
     {
+        _currentPlatform = platform;
         ShowTowerPanel();
     }
 
@@ -77,5 +81,11 @@ public class UIController : MonoBehaviour
             card.Initialize(tower);
             activeCards.Add(cardGameObject);
         }
+    }
+
+    private void HandleTowerSelected(TowerData towerData)
+    {
+        _currentPlatform.PlaceTower(towerData);
+        HideTowerPanel();
     }
 }

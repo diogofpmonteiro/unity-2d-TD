@@ -4,10 +4,10 @@ using UnityEngine.InputSystem;
 
 public class Platform : MonoBehaviour
 {
-    public static event Action<Platform> OnPlatformClicked; 
+    public static event Action<Platform> OnPlatformClicked;
     [SerializeField] private LayerMask platformLayerMask;
 
-   private void Update()
+    private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
@@ -24,5 +24,10 @@ public class Platform : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PlaceTower(TowerData data)
+    {
+        Instantiate(data.prefab, transform.position, Quaternion.identity, transform);
     }
 }

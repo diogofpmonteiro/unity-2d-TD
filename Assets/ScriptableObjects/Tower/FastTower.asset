@@ -17,6 +17,7 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileDuration: 2
   projectileSize: 1
-  damage: 1
+  damage: 3
   cost: 50
   sprite: {fileID: 7538528287983206177, guid: 3ad4cc6677f5a45db94711bc2a6cc972, type: 3}
+  prefab: {fileID: 1982222710634555834, guid: bae2e870a49a44a9dbaa1d8ed95977ef, type: 3}
