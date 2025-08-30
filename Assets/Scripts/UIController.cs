@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -15,8 +16,17 @@ public class UIController : MonoBehaviour
     [SerializeField] private Transform cardsContainer;
     [SerializeField] private TowerData[] towers;
     private List<GameObject> activeCards = new List<GameObject>();
-
     private Platform _currentPlatform;
+    [SerializeField] private Button speed1Button;
+    [SerializeField] private Button speed2Button;
+    [SerializeField] private Button speed3Button;
+    [SerializeField] private Color normalButtonColor = Color.white;
+    [SerializeField] private Color selectedButtonColor = Color.green;
+    [SerializeField] private Color normalTextColor = Color.black;
+    [SerializeField] private Color selectedTextColor = Color.white;
+    private float _speed1Scale = 0.2f;
+    private float _speed2Scale = 1f;
+    private float _speed3Scale = 2f;
 
     private void OnEnable()
     {
@@ -34,6 +44,15 @@ public class UIController : MonoBehaviour
         GameManager.OnResourcesChanged -= UpdateResourcesText;
         Platform.OnPlatformClicked -= HandlePlatformClicked;
         TowerCard.onTowerSelected -= HandleTowerSelected;
+    }
+
+    private void Start()
+    {
+        speed1Button.onClick.AddListener(() => SetGameSpeed(_speed1Scale));
+        speed2Button.onClick.AddListener(() => SetGameSpeed(_speed2Scale));
+        speed3Button.onClick.AddListener(() => SetGameSpeed(_speed3Scale));
+
+        HighlightSelectedSpeedButton(GameManager.Instance.GameSpeed);
     }
 
     private void UpdateWaveText(int currentWave)
@@ -68,7 +87,7 @@ public class UIController : MonoBehaviour
     {
         towerPanel.SetActive(false);
         Platform.towerPanelOpen = false;
-        GameManager.Instance.SetTimeScale(1f);
+        GameManager.Instance.SetTimeScale(GameManager.Instance.GameSpeed);
     }
 
     private void PopulateTowerCards()
@@ -99,8 +118,7 @@ public class UIController : MonoBehaviour
         {
             StartCoroutine(ShowNoResourcesMessage());
         }
-        
-        HideTowerPanel();   
+        HideTowerPanel();
     }
 
     private IEnumerator ShowNoResourcesMessage()
@@ -108,5 +126,29 @@ public class UIController : MonoBehaviour
         noResourcesText.SetActive(true);
         yield return new WaitForSecondsRealtime(3f);
         noResourcesText.SetActive(false);
+    }
+
+    public void SetGameSpeed(float timeScale)
+    {
+        HighlightSelectedSpeedButton(timeScale);
+        GameManager.Instance.SetGameSpeed(timeScale);
+    }
+
+    private void UpdateButtonVisual(Button button, bool isSelected)
+    {
+        button.image.color = isSelected ? selectedButtonColor : normalButtonColor;
+
+        TMP_Text text = button.GetComponentInChildren<TMP_Text>();
+        if (text != null)
+        {
+            text.color = isSelected ? selectedTextColor : normalTextColor;
+        }
+    }
+
+    private void HighlightSelectedSpeedButton(float selectedSpeed)
+    {
+        UpdateButtonVisual(speed1Button, selectedSpeed == _speed1Scale);
+        UpdateButtonVisual(speed2Button, selectedSpeed == _speed2Scale);
+        UpdateButtonVisual(speed3Button, selectedSpeed == _speed3Scale);
     }
 }
