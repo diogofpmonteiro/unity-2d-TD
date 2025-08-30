@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -6,6 +7,8 @@ public class Enemy : MonoBehaviour
     private Vector3 _targetPosition;
     private Path _currentPath; 
     private int _currentWaypoint; 
+
+    public static event Action<EnemyData> OnEnemyReachedEnd;
 
     private void Awake()
     {
@@ -33,8 +36,9 @@ public class Enemy : MonoBehaviour
                 _currentWaypoint++;
                 _targetPosition = _currentPath.GetPosition(_currentWaypoint);
             }
-            else
+            else // reached last waypoint
             {
+                OnEnemyReachedEnd?.Invoke(data);
                 gameObject.SetActive(false);
             }
         }
