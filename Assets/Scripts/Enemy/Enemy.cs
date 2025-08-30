@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     private int _currentWaypoint;
     private float _lives;
     private float _maxLives;
+    private bool _hasBeenCounted = false; 
 
     private void Awake()
     {
@@ -31,6 +32,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (_hasBeenCounted) return;
+
         // move towards target position   
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition,
                                                     data.speed * Time.deltaTime);
@@ -46,6 +49,7 @@ public class Enemy : MonoBehaviour
             }
             else // reached last waypoint
             {
+                _hasBeenCounted = true;
                 OnEnemyReachedEnd?.Invoke(data);
                 gameObject.SetActive(false);
             }
@@ -54,12 +58,15 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (_hasBeenCounted) return;
+
         _lives -= damage;
         _lives = Math.Max(_lives, 0);
         UpdateHealthBar();
 
         if (_lives <= 0)
         {
+            _hasBeenCounted = true;
             OnEnemyDestroyed?.Invoke(this);
             gameObject.SetActive(false);
         }
@@ -75,6 +82,7 @@ public class Enemy : MonoBehaviour
 
     public void Initialize(float healthMultiplier)
     {
+        _hasBeenCounted = false;
         _maxLives = data.lives * healthMultiplier;
         _lives = _maxLives;
         UpdateHealthBar();

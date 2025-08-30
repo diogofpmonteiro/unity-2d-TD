@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b3061ab3b8245d3b5e6e8f23b83ba7, type: 3}
-  m_Name: Wave2
+  m_Script: {fileID: 11500000, guid: 7f680b903ac374474b2b3b99da97b8d1, type: 3}
+  m_Name: BurstTower
   m_EditorClassIdentifier: 
-  enemyType: 1
-  spawnInterval: 0.5
-  enemiesPerWave: 20
+  range: 4
+  shootInterval: 0.03
+  projectileSpeed: 8
+  projectileDuration: 0.5
+  projectileSize: 0.4
+  damage: 0.1

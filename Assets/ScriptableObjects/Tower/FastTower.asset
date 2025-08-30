@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f680b903ac374474b2b3b99da97b8d1, type: 3}
   m_Name: FastTower
   m_EditorClassIdentifier: 
-  range: 2.5
-  shootInterval: 1
+  range: 3
+  shootInterval: 0.7
   projectileSpeed: 10
   projectileDuration: 2
+  projectileSize: 1
   damage: 1

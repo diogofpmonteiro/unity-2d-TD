@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
     private float _spawnCounter;
     private int _enemiesRemoved;
     private WaveData CurrentWave => waves[_currentWaveIndex];
-    private float _timeBetweenWaves = 2f;
+    private float _timeBetweenWaves = 1f;
     private float _waveCooldown;
     private bool _isBetweenWaves = false;
 
