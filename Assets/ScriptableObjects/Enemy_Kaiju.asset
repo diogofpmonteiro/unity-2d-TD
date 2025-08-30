@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy_Kaiju
   m_EditorClassIdentifier: 
   lives: 10
-  damage: 2
+  damage: 3
   speed: 2
