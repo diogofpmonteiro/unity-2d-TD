@@ -14,14 +14,14 @@ public class Spawner : MonoBehaviour
 
     private Dictionary<EnemyType, ObjectPooler> _poolDictionary;
     private int _currentWaveIndex = 0;
-    private int _waveCounter = 0; 
+    private int _waveCounter = 0;
     private float _spawnTimer;
     private float _spawnCounter;
     private int _enemiesRemoved;
     private WaveData CurrentWave => waves[_currentWaveIndex];
     private float _timeBetweenWaves = 2f;
     private float _waveCooldown;
-    private bool _isBetweenWaves = false; 
+    private bool _isBetweenWaves = false;
 
 
 
@@ -35,15 +35,20 @@ public class Spawner : MonoBehaviour
         };
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         Enemy.OnEnemyReachedEnd += HandleEnemyReachedEnd;
+        Enemy.OnEnemyDestroyed += HandleEnemyDestroyed;
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         Enemy.OnEnemyReachedEnd -= HandleEnemyReachedEnd;
+        Enemy.OnEnemyDestroyed -= HandleEnemyDestroyed;
     }
 
-    private void Start() {
+    private void Start()
+    {
         OnWaveChanged?.Invoke(_waveCounter);
     }
 
@@ -93,6 +98,11 @@ public class Spawner : MonoBehaviour
 
     private void HandleEnemyReachedEnd(EnemyData data)
     {
-        _enemiesRemoved++; 
+        _enemiesRemoved++;
+    }
+
+    private void HandleEnemyDestroyed(Enemy enemy)
+    {
+        _enemiesRemoved++;
     }
 }
