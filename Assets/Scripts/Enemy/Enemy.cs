@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
     public static event Action<EnemyData> OnEnemyReachedEnd;
     public static event Action<Enemy> OnEnemyDestroyed;
+    public EnemyData Data => data; // how we define readonly properies
 
     [SerializeField] private EnemyData data;
     [SerializeField] private Transform healthBar;
+
     private Vector3 _healthBarOriginalScale;
     private Vector3 _targetPosition;
     private Path _currentPath;
