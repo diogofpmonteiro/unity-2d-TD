@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private Path _currentPath;
     private int _currentWaypoint;
     private float _lives;
+    private float _maxLives;
 
     private void Awake()
     {
@@ -25,8 +26,6 @@ public class Enemy : MonoBehaviour
     {
         _currentWaypoint = 0;
         _targetPosition = _currentPath.GetPosition(_currentWaypoint);
-        _lives = data.lives;
-        UpdateHealthBar();
     }
 
     void Update()
@@ -67,9 +66,16 @@ public class Enemy : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        float healthPercent = _lives / data.lives;
+        float healthPercent = _lives / _maxLives;
         Vector3 scale = _healthBarOriginalScale;
         scale.x = _healthBarOriginalScale.x * healthPercent;
         healthBar.localScale = scale;
+    }
+
+    public void Initialize(float healthMultiplier)
+    {
+        _maxLives = data.lives * healthMultiplier;
+        _lives = _maxLives;
+        UpdateHealthBar();
     }
 }
