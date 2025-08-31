@@ -31,6 +31,6 @@ public class Platform : MonoBehaviour
 
     public void PlaceTower(TowerData data)
     {
-        Instantiate(data.prefab, transform.position, Quaternion.identity, transform);
+        Instantiate(data.prefab, transform.position + Vector3.up * 0.25f, Quaternion.identity, transform);
     }
 }
