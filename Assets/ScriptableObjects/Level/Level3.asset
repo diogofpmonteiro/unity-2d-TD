@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2637c81580d1d4a568d8303bc694e92f, type: 3}
   m_Name: Level3
   m_EditorClassIdentifier: 
-  levelName: Level1
-  wavesToWin: 5
-  startingResources: 280
-  startingLives: 4
+  levelName: Level3
+  wavesToWin: 3
+  startingResources: 350
+  startingLives: 5

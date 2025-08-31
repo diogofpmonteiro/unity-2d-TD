@@ -462,9 +462,7 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1462369546}
-  - {fileID: 754331853}
   - {fileID: 1553962355}
-  - {fileID: 2043629403}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &155940611
@@ -1378,8 +1376,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 11400000, guid: 424f9ae4a243b454c9321ddb24cd3172, type: 2}
-  - {fileID: 11400000, guid: f3d5a6fbb9436465a9cb73ff8e1a9cae, type: 2}
-  - {fileID: 11400000, guid: 47f7354e564ed44bfb72292b1a67f9ec, type: 2}
   orcPool: {fileID: 16994375}
   dragonPool: {fileID: 706230738}
   kaijuPool: {fileID: 1546856134}
@@ -1492,7 +1488,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1744781871}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7404529700515970617, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
       propertyPath: m_Pivot.x
@@ -2998,11 +3022,11 @@ Transform:
   m_GameObject: {fileID: 754331852}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5906184, y: 0.39520144, z: -90}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 151722102}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &754331854
 MonoBehaviour:
@@ -6917,7 +6941,7 @@ GameObject:
   - component: {fileID: 1868368209}
   - component: {fileID: 1868368208}
   m_Layer: 0
-  m_Name: Path1
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7748,11 +7772,11 @@ Transform:
   m_GameObject: {fileID: 2043629401}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5906184, y: 0.39520144, z: -90}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 151722102}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2051214304
 PrefabInstance:
@@ -8342,6 +8366,8 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 754331853}
+  - {fileID: 2043629403}
   - {fileID: 151722102}
   - {fileID: 1868368209}
   - {fileID: 382446593}

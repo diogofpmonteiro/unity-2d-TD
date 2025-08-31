@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    public static UIController Instance { get; private set; }
+
     [SerializeField] private TMP_Text waveText;
     [SerializeField] private TMP_Text livesText;
     [SerializeField] private TMP_Text resourcesText;
@@ -35,6 +37,19 @@ public class UIController : MonoBehaviour
     private float _speed1Scale = 0.2f;
     private float _speed2Scale = 1f;
     private float _speed3Scale = 2f;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     private void OnEnable()
     {
@@ -254,5 +269,12 @@ public class UIController : MonoBehaviour
         missionCompletePanel.SetActive(false);
         GameManager.Instance.SetTimeScale(GameManager.Instance.GameSpeed);
         Spawner.Instance.EnableEndlessMode();
+    }
+
+    public void LoadNextLevel()
+    {
+        missionCompletePanel.SetActive(false);
+        int currentIndex = SceneManager.GetActiveScene().buildIndex - 1; // -1 to account for MainMenu scene
+        LevelManager.Instance.LoadLevel(LevelManager.Instance.allLevels[currentIndex + 1]);
     }
 }

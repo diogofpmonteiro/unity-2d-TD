@@ -20,7 +20,8 @@ public class LevelManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-        CurrentLevel = allLevels[0]; // default to first level
+        int currentIndex = SceneManager.GetActiveScene().buildIndex - 1; // -1 to account for MainMenu scene
+        CurrentLevel = allLevels[currentIndex]; // default to scene index
     }
 
     public void LoadLevel(LevelData levelData)

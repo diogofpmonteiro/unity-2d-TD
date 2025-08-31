@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        _currentPath = GameObject.Find("Path1").GetComponent<Path>();
+        _currentPath = GameObject.Find("Path").GetComponent<Path>();
         _healthBarOriginalScale = healthBar.localScale;
     }
 
