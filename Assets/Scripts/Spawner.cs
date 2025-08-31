@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public static Spawner Instance { get; private set; }
+    
     public static event Action<int> OnMissionComplete;
     public static event Action<int> OnWaveChanged;
 
@@ -23,8 +25,7 @@ public class Spawner : MonoBehaviour
     private float _timeBetweenWaves = 1f;
     private float _waveCooldown;
     private bool _isBetweenWaves = false;
-
-
+    private bool _isEndlessMode = false;
 
     private void Awake()
     {
@@ -34,6 +35,15 @@ public class Spawner : MonoBehaviour
             { EnemyType.Dragon, dragonPool },
             { EnemyType.Kaiju, kaijuPool },
         };
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     private void OnEnable()
@@ -62,7 +72,7 @@ public class Spawner : MonoBehaviour
             if (_waveCooldown <= 0f)
             {
                 // if we won enough waves to complete mission
-                if (_waveCounter + 1 >= LevelManager.Instance.CurrentLevel.wavesToWin)
+                if (_waveCounter + 1 >= LevelManager.Instance.CurrentLevel.wavesToWin && !_isEndlessMode)
                 {
                     OnMissionComplete?.Invoke(_waveCounter);
                     return;
@@ -105,7 +115,7 @@ public class Spawner : MonoBehaviour
             float healthMultiplier = 1f + (_waveCounter * 0.1f); // 10% per wave
             Enemy enemy = spawnedObject.GetComponent<Enemy>();
             enemy.Initialize(healthMultiplier);
-            
+
             spawnedObject.SetActive(true);
         }
     }
@@ -118,5 +128,10 @@ public class Spawner : MonoBehaviour
     private void HandleEnemyDestroyed(Enemy enemy)
     {
         _enemiesRemoved++;
+    }
+
+    public void EnableEndlessMode()
+    {
+        _isEndlessMode = true;
     }
 }

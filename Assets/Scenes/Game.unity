@@ -6989,6 +6989,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Endless Mode Button
       objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1744781871}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnterEndlessMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524351462597606364, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7404529700515970617, guid: 7eabed68031614a17a4319c49f5ed09c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
