@@ -27,6 +27,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Color normalTextColor = Color.black;
     [SerializeField] private Color selectedTextColor = Color.white;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject gameOverPanel;
     private bool _isGamePaused = false;
 
     private float _speed1Scale = 0.2f;
@@ -76,6 +77,11 @@ public class UIController : MonoBehaviour
     private void UpdateLivesText(int currentLives)
     {
         livesText.text = $"Lives: {currentLives}";
+
+        if (currentLives <= 0)
+        {
+            ShowGameOver();
+        }
     }
     private void UpdateResourcesText(int currentResources)
     {
@@ -193,11 +199,11 @@ public class UIController : MonoBehaviour
     public void QuitGame()
     {
         // This will stop play mode in the editor
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #else
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
-        #endif
+#endif
     }
 
     public void GoToMainMenu()
@@ -205,5 +211,10 @@ public class UIController : MonoBehaviour
         GameManager.Instance.SetTimeScale(1f);
         SceneManager.LoadScene("MainMenu");
     }
-    
+
+    private void ShowGameOver()
+    {
+        GameManager.Instance.SetTimeScale(0f);
+        gameOverPanel.SetActive(true);
+    }
 }
