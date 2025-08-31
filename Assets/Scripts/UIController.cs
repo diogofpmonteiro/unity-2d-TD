@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text livesText;
     [SerializeField] private TMP_Text resourcesText;
     [SerializeField] private TMP_Text warningText;
+    [SerializeField] private TMP_Text objectiveText;
     [SerializeField] private GameObject towerPanel;
     [SerializeField] private GameObject towerCardPrefab;
     [SerializeField] private Transform cardsContainer;
@@ -41,6 +42,7 @@ public class UIController : MonoBehaviour
         GameManager.OnResourcesChanged += UpdateResourcesText;
         Platform.OnPlatformClicked += HandlePlatformClicked;
         TowerCard.onTowerSelected += HandleTowerSelected;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
@@ -50,6 +52,7 @@ public class UIController : MonoBehaviour
         GameManager.OnResourcesChanged -= UpdateResourcesText;
         Platform.OnPlatformClicked -= HandlePlatformClicked;
         TowerCard.onTowerSelected -= HandleTowerSelected;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void Start()
@@ -224,5 +227,18 @@ public class UIController : MonoBehaviour
     {
         GameManager.Instance.SetTimeScale(0f);
         gameOverPanel.SetActive(true);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        StartCoroutine(ShowObjective());
+    }
+
+    private IEnumerator ShowObjective()
+    {
+        objectiveText.text = $"Survive {LevelManager.Instance.CurrentLevel.wavesToWin} waves!";
+        objectiveText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        objectiveText.gameObject.SetActive(false);
     }
 }
