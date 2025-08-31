@@ -21,3 +21,4 @@ MonoBehaviour:
   cost: 100
   sprite: {fileID: -1676851070548306391, guid: e00a28044a42947159eb4476a2933a9e, type: 3}
   prefab: {fileID: 1982222710634555834, guid: e79b084a9297049799a8bcd68e7ec6d3, type: 3}
+  smokeEffectPrefab: {fileID: 7910776288574003506, guid: 6648f1d34f3054396af5d64a6d46a7af, type: 3}

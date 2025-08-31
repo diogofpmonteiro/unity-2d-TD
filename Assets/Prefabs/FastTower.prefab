@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5519360962901566628}
   - component: {fileID: 6440044064551309357}
   - component: {fileID: 4344970692790156858}
+  - component: {fileID: 5332792723106271522}
   m_Layer: 0
   m_Name: FastTower
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1979889405
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -3768692609619806505, guid: fac5129655a6f4eeb84d3945e9ef68c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -152,4 +153,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2851817279623540948, guid: b49c715edf887421a97b69c24befdf91, type: 3}
+  poolSize: 5
+--- !u!114 &5332792723106271522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982222710634555834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d15ae0a4b6bb43278e5f79b159f47c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7910776288574003506, guid: 6648f1d34f3054396af5d64a6d46a7af, type: 3}
   poolSize: 5
