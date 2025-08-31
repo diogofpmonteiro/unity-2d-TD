@@ -220,6 +220,8 @@ public class UIController : MonoBehaviour
 
     public void RestartLevel()
     {
+        missionCompletePanel.SetActive(false);
+        gameOverPanel.SetActive(false);
         LevelManager.Instance.LoadLevel(LevelManager.Instance.CurrentLevel);
     }
 

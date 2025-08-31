@@ -6,7 +6,27 @@ public class Platform : MonoBehaviour
 {
     public static event Action<Platform> OnPlatformClicked;
     [SerializeField] private LayerMask platformLayerMask;
+    [SerializeField] private GameObject shadowPrefab; 
+
+    private GameObject shadowInstance;
+    private SpriteRenderer platformRenderer;
+    private bool hasTower = false;
+
     public static bool towerPanelOpen { get; set; } = false; 
+    
+    private void Awake() {
+        platformRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        // Pre-instantiate shadow and hide it
+        if (shadowPrefab != null)
+        {
+            shadowInstance = Instantiate(shadowPrefab, transform.position, Quaternion.identity);
+            shadowInstance.SetActive(false);
+        }
+    }
 
     private void Update()
     {
@@ -32,5 +52,30 @@ public class Platform : MonoBehaviour
     public void PlaceTower(TowerData data)
     {
         Instantiate(data.prefab, transform.position + Vector3.up * 0.25f, Quaternion.identity, transform);
+        hasTower = true;
+        HideShadow();
+    }
+    
+   private void OnMouseEnter()
+    {
+        if (!hasTower && shadowPrefab != null)
+        {
+            shadowInstance.SetActive(true);
+            platformRenderer.color = new Color(1f, 1f, 1f, 0.3f); // semi-transparent
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        HideShadow();
+    }
+
+    private void HideShadow()
+    {
+        if (shadowInstance != null)
+        {
+            shadowInstance.SetActive(false);
+        }
+        platformRenderer.color = Color.white;
     }
 }

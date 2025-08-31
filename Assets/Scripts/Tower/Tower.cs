@@ -41,11 +41,11 @@ public class Tower : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, data.range);
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireSphere(transform.position, data.range);
+    // }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

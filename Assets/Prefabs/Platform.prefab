@@ -49,6 +49,7 @@ MonoBehaviour:
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  shadowPrefab: {fileID: 7414666055704450911, guid: 4df17f01ae4ff4f2cb42fd8cfef62dd5, type: 3}
 --- !u!212 &271766986954734308
 SpriteRenderer:
   m_ObjectHideFlags: 0
