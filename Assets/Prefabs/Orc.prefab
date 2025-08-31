@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3290789767978382547}
   - component: {fileID: 566132428248907201}
   - component: {fileID: 478883744954873560}
+  - component: {fileID: 7441192672614658029}
   m_Layer: 0
   m_Name: Orc
   m_TagString: Enemy
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 161139141
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1378406252391678146, guid: 735a907da1ca94d95a885914f8ce469c, type: 3}
+  m_Sprite: {fileID: -3074221327333026523, guid: 574fcbfa5486b4c42b33487207f94d96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,6 +170,28 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.65, y: 1}
   m_Direction: 0
+--- !u!95 &7441192672614658029
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288166218843579183}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed8050ffede3a46358e35a27366ee2c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3440249265965271209
 GameObject:
   m_ObjectHideFlags: 0

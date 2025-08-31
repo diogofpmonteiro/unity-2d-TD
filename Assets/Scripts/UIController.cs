@@ -235,6 +235,8 @@ public class UIController : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        missionCompletePanel.SetActive(false);
+        gameOverPanel.SetActive(false);
         GameManager.Instance.SetTimeScale(1f);
         SceneManager.LoadScene("MainMenu");
     }
