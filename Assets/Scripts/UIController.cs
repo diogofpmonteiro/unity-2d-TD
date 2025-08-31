@@ -192,10 +192,18 @@ public class UIController : MonoBehaviour
 
     public void QuitGame()
     {
+        // This will stop play mode in the editor
         #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+                UnityEditor.EditorApplication.isPlaying = false;
         #else
-            Application.Quit();
+        Application.Quit();
         #endif
     }
+
+    public void GoToMainMenu()
+    {
+        GameManager.Instance.SetTimeScale(1f);
+        SceneManager.LoadScene("MainMenu");
+    }
+    
 }
