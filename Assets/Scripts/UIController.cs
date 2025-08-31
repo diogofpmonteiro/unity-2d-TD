@@ -205,19 +205,17 @@ public class UIController : MonoBehaviour
 
     public void RestartLevel()
     {
-        GameManager.Instance.SetTimeScale(1f);
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.buildIndex);
+        LevelManager.Instance.LoadLevel(LevelManager.Instance.CurrentLevel);
     }
 
     public void QuitGame()
     {
         // This will stop play mode in the editor
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 
     public void GoToMainMenu()

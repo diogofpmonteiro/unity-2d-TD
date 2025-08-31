@@ -5,16 +5,16 @@ public class MainMenuController : MonoBehaviour
 {
     public void StartNewGame()
     {
-        SceneManager.LoadScene("Game");
+        LevelManager.Instance.LoadLevel(LevelManager.Instance.allLevels[0]);
     }
 
     public void QuitGame()
     {
         // This will stop play mode in the editor
         #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
         #else
-        Application.Quit(); // This is where the game will "actually" quit
+            Application.Quit(); // This is where the game will "actually" quit
         #endif
     }
 }
